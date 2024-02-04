@@ -1,24 +1,33 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import CityCard from "./components/CityCard/CityCard";
+import { fetchData } from "./api/utils";
+import { params, url } from "./api/data";
+import { WeatherData } from "./api/types";
 
 function App() {
+  const [weatherData, setWeatherData] = useState<WeatherData | undefined>(
+    undefined,
+  );
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const fetchAllData = async () => {
+      const data = await fetchData(url, params);
+      setWeatherData(data);
+      setIsLoading(false);
+      console.log(data);
+    };
+
+    fetchAllData();
+  }, []);
+
+  if (isLoading) {
+    return <div>Is loading...</div>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CityCard todayWeather={weatherData?.current} />
     </div>
   );
 }
