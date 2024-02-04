@@ -1,7 +1,5 @@
 import React from "react";
 
-function TempBlock() {
+export function TempBlock() {
   return <div>TempBlock</div>;
 }
-
-export default TempBlock;

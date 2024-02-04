@@ -6,7 +6,7 @@ interface CityCardProps {
   todayWeather: CurrentData | undefined;
 }
 
-function CityCard({ todayWeather }: CityCardProps) {
+export function CityCard({ todayWeather }: CityCardProps) {
   const formattedTime = todayWeather?.time.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -27,5 +27,3 @@ function CityCard({ todayWeather }: CityCardProps) {
     </div>
   );
 }
-
-export default CityCard;

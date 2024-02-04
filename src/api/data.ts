@@ -12,7 +12,7 @@ export const params: Params = {
   ],
   hourly: ["temperature_2m", "relative_humidity_2m"],
   daily: ["temperature_2m_max", "temperature_2m_min"],
-  timezone: "America/New_York",
+  timezone: "auto",
 };
 
 export const url = "https://api.open-meteo.com/v1/forecast";

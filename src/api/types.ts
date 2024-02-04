@@ -28,6 +28,12 @@ export type DailyData = {
   temperature2mMin: Float32Array;
 };
 
+export type DayData = {
+  time: Date;
+  temperature2mMax: number;
+  temperature2mMin: number;
+};
+
 export type WeatherData = {
   current: CurrentData;
   hourly: HourlyData;

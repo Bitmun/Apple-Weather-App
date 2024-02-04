@@ -1,0 +1,10 @@
+.hours-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.hour-wrapper {
+  display: flex;
+  padding-right: 30px;
+  flex-direction: column;
+}

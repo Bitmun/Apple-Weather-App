@@ -1,0 +1,15 @@
+.el-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.picture {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.week-day {
+  padding-right: 30px;
+  width: 40px;
+}
+

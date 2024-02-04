@@ -47,20 +47,3 @@
   line-height: normal;
   letter-spacing: 0.41px;
 }
-
-.sub-temperature {
-  text-align: center;
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
