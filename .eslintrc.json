@@ -27,5 +27,6 @@
         "import/resolver": {
             "typescript": {}
         }
-    }
+    },
+    "ignorePatterns": ["*.js"]
 }

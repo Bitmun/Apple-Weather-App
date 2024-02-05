@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
-import { CityCard } from "./components/CityCard/CityCard";
 import { fetchData } from "./api/utils";
 import { params, url } from "./api/data";
 import { WeatherData } from "./api/types";
-import { WeekForecast } from "./components/WeekForecast/WeekForecast";
-import { CurrentDayInfo } from "./components/CurrentDayInfo/CurrentDayInfo";
+import MainPart from "./components/MainPart/MainPart";
+import { SideBar } from "./components/SideBar/SideBar";
+
+interface WeatherContextType {
+  weatherData: WeatherData;
+}
+
+export const WeatherDataContext = createContext<WeatherContextType | null>(
+  null,
+);
 
 function App() {
-  const [weatherData, setWeatherData] = useState<WeatherData | undefined>(
-    undefined,
-  );
+  const [weatherData, setWeatherData] = useState<WeatherData>();
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,25 +24,22 @@ function App() {
       const data = await fetchData(url, params);
       setWeatherData(data);
       setIsLoading(false);
-      console.log(data);
     };
 
     fetchAllData();
   }, []);
 
-  if (isLoading) {
+  if (isLoading || !weatherData) {
     return <div>Is loading...</div>;
   }
 
   return (
-    <div className="App">
-      <CityCard todayWeather={weatherData?.current} />
-      <WeekForecast dailyWeather={weatherData?.daily} />
-      <CurrentDayInfo
-        hourlyData={weatherData?.hourly}
-        currentTime={weatherData?.current.time}
-      />
-    </div>
+    <WeatherDataContext.Provider value={{ weatherData }}>
+      <div className="app-wrapper">
+        <MainPart />
+        <SideBar />
+      </div>
+    </WeatherDataContext.Provider>
   );
 }
 

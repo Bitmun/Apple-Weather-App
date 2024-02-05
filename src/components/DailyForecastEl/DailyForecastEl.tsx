@@ -11,9 +11,9 @@ export function DailyForecastEl({ dayWeather }: DailyForecastElProps) {
   return (
     <div className="el-wrapper">
       <p className="week-day">{getWeekDay(dayWeather.time)}: </p>
-      <p> {dayWeather.temperature2mMin.toFixed()}</p>
+      <p> {dayWeather.temperature2mMin.toFixed()}°</p>
       <p className="picture">.......</p>
-      <p> {dayWeather.temperature2mMax.toFixed()}</p>
+      <p> {dayWeather.temperature2mMax.toFixed()}°</p>
     </div>
   );
 }

@@ -1,29 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./cityCard.css";
-import { CurrentData } from "../../api/types";
+import { WeatherDataContext } from "../../App";
+import { TempBlock } from "../TempBlock/TempBlock";
 
-interface CityCardProps {
-  todayWeather: CurrentData | undefined;
-}
+export function CityCard() {
+  const data = useContext(WeatherDataContext);
 
-export function CityCard({ todayWeather }: CityCardProps) {
-  const formattedTime = todayWeather?.time.toLocaleString("en-US", {
+  const currentData = data?.weatherData.current;
+
+  const dailyData = data?.weatherData.daily;
+
+  const currentTime = currentData?.time.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
   });
 
+  const minTemp = dailyData?.temperature2mMin[0].toFixed();
+
+  const maxTemp = dailyData?.temperature2mMax[0].toFixed();
+
+  const currentTemp = currentData?.temperature2m.toFixed();
+
   return (
     <div className="card-wrapper">
       <div className="left-part-wrapper">
         <p className="city-name">New York</p>
-        <p className="city-time">{formattedTime}</p>
+        <p className="city-time">{currentTime}</p>
       </div>
-      <div className="right-part-wrapper">
-        <div className="current-temperature">
-          {todayWeather?.temperature2m.toFixed()}
-        </div>
-      </div>
+      <TempBlock
+        maxTemp={maxTemp}
+        minTemp={minTemp}
+        currentTemp={currentTemp}
+      />
     </div>
   );
 }

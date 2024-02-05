@@ -1,14 +1,15 @@
-import React from "react";
-import { DailyData, DayData } from "../../api/types";
+import React, { useContext } from "react";
+import { DayData } from "../../api/types";
 import { DailyForecastEl } from "../DailyForecastEl/DailyForecastEl";
+import "./weekForecast.css";
+import { WeatherDataContext } from "../../App";
 
-interface WeekForecastProps {
-  dailyWeather: DailyData | undefined;
-}
-
-export function WeekForecast({ dailyWeather }: WeekForecastProps) {
+export function WeekForecast() {
+  const data = useContext(WeatherDataContext);
+  const dailyWeather = data?.weatherData.daily;
   return (
-    <div>
+    <div className="week-wrapper">
+      <div>10-DAY FORECAST</div>
       {dailyWeather?.time.map((el, index) => {
         const dayWeather: DayData = {
           time: el,

@@ -1,19 +1,16 @@
-import React from "react";
-import { HourlyData } from "../../api/types";
+import React, { useContext } from "react";
 import { filterHourlyData } from "../../utils/dataUtils";
 import "./currentDayInfo.css";
+import { WeatherDataContext } from "../../App";
 
-interface CurrentDayProps {
-  hourlyData: HourlyData | undefined;
-  currentTime: Date | undefined;
-}
+export function CurrentDayInfo() {
+  const data = useContext(WeatherDataContext);
 
-export function CurrentDayInfo({ hourlyData, currentTime }: CurrentDayProps) {
-  console.log(currentTime);
+  const hourlyData = data?.weatherData.hourly;
+
+  const currentTime = data?.weatherData?.current.time;
 
   const filteredData = filterHourlyData(hourlyData, currentTime, 10);
-
-  console.log(filteredData);
 
   return (
     <div className="hours-wrapper">
@@ -24,7 +21,7 @@ export function CurrentDayInfo({ hourlyData, currentTime }: CurrentDayProps) {
           hour12: true,
         });
         return (
-          <div className="hour-wrapper">
+          <div key={el.toISOString()} className="hour-wrapper">
             <p>{formattedTime}</p>
             <p>....</p>
             <p>{filteredData.temperature2m[index].toFixed()}</p>

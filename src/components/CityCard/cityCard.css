@@ -1,10 +1,10 @@
 .card-wrapper {
   position: relative;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
   border: solid black 2px;
   border-radius: 15px;
-  width: fit-content;
+  width: 90%;
   padding: 15px;
 }
 
