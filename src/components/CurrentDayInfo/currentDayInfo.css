@@ -5,6 +5,6 @@
 
 .hour-wrapper {
   display: flex;
-  padding-right: 30px;
   flex-direction: column;
+  padding-right: 30px;
 }
