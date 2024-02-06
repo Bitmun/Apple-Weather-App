@@ -1,0 +1,29 @@
+.rightPartWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.currentTemperature {
+  margin-top: -20px;
+  font-size: 110px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+}
+
+.subTemperature {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.subTemperature:last-child {
+  margin-right: 0;
+}
+
+.subWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
