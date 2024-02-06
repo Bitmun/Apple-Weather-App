@@ -1,9 +1,9 @@
-.hours-wrapper {
+.hoursWrapper {
   display: flex;
   flex-direction: row;
 }
 
-.hour-wrapper {
+.hourWrapper {
   display: flex;
   flex-direction: column;
   padding-right: 30px;

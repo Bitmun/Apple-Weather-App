@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { DayData } from "../../api/types";
 import { DailyForecastEl } from "../DailyForecastEl/DailyForecastEl";
-import "./weekForecast.css";
 import { WeatherDataContext } from "../../App";
+import styles from "./weekForecast.module.css";
 
 export function WeekForecast() {
   const data = useContext(WeatherDataContext);
@@ -10,7 +10,7 @@ export function WeekForecast() {
   const dailyWeather = data?.weatherData.daily;
 
   return (
-    <div className="week-wrapper">
+    <div className={styles.weekWrapper}>
       <div>10-DAY FORECAST</div>
       {dailyWeather?.time.map((el, index) => {
         const dayWeather: DayData = {

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { filterHourlyData, formatTime } from "../../utils/dataUtils";
-import "./currentDayInfo.css";
+import styles from "./currentDayInfo.module.css";
 import { WeatherDataContext } from "../../App";
 
 export function CurrentDayInfo() {
@@ -13,11 +13,11 @@ export function CurrentDayInfo() {
   const filteredData = filterHourlyData(hourlyData, currentTime, 10);
 
   return (
-    <div className="hours-wrapper">
+    <div className={styles.hoursWrapper}>
       {filteredData.time.map((el, index) => {
         const formattedTime = formatTime(el);
         return (
-          <div key={el.toISOString()} className="hour-wrapper">
+          <div key={el.toISOString()} className={styles.hourWrapper}>
             <p>{formattedTime}</p>
             <p>....</p>
             <p>{filteredData.temperature2m[index].toFixed()}</p>

@@ -1,4 +1,4 @@
-.el-wrapper {
+.elWrapper {
   display: flex;
   flex-direction: row;
 }
@@ -8,7 +8,7 @@
   padding-right: 10px;
 }
 
-.week-day {
+.weekDay {
   width: 40px;
   padding-right: 30px;
 }

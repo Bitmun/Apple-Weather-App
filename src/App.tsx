@@ -1,10 +1,10 @@
 import React, { createContext, useEffect, useState } from "react";
-import "./App.css";
 import { fetchData } from "./api/utils";
 import { params } from "./api/data";
 import { WeatherData } from "./api/types";
 import MainPart from "./components/MainPart/MainPart";
 import { SideBar } from "./components/SideBar/SideBar";
+import styles from "./App.module.css";
 
 interface WeatherContextType {
   weatherData: WeatherData;
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <WeatherDataContext.Provider value={{ weatherData }}>
-      <div className="app-wrapper">
+      <div className={styles.appWrapper}>
         <MainPart />
         <SideBar />
       </div>
