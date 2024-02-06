@@ -20,7 +20,7 @@ export function CurrentDayInfo() {
           <div key={el.toISOString()} className={styles.hourWrapper}>
             <p>{formattedTime}</p>
             <p>....</p>
-            <p>{filteredData.temperature2m[index].toFixed()}</p>
+            <p>{filteredData.temperature2m[index].toFixed()}°</p>
           </div>
         );
       })}
