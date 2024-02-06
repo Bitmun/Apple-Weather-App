@@ -6,7 +6,9 @@ import { WeatherDataContext } from "../../App";
 
 export function WeekForecast() {
   const data = useContext(WeatherDataContext);
+
   const dailyWeather = data?.weatherData.daily;
+
   return (
     <div className="week-wrapper">
       <div>10-DAY FORECAST</div>

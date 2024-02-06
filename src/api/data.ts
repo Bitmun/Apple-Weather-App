@@ -14,5 +14,3 @@ export const params: Params = {
   daily: ["temperature_2m_max", "temperature_2m_min"],
   timezone: "auto",
 };
-
-export const url = "https://api.open-meteo.com/v1/forecast";

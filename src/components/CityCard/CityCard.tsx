@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
-import "./cityCard.css";
+import React, { useContext, useMemo } from "react";
+import styles from "./cityCard.module.css";
 import { WeatherDataContext } from "../../App";
 import { TempBlock } from "../TempBlock/TempBlock";
+import { formatTime } from "../../utils/dataUtils";
 
 export function CityCard() {
   const data = useContext(WeatherDataContext);
@@ -10,23 +11,27 @@ export function CityCard() {
 
   const dailyData = data?.weatherData.daily;
 
-  const currentTime = currentData?.time.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
+  const currentTime = formatTime(currentData?.time);
 
-  const minTemp = dailyData?.temperature2mMin[0].toFixed();
-
-  const maxTemp = dailyData?.temperature2mMax[0].toFixed();
-
-  const currentTemp = currentData?.temperature2m.toFixed();
+  const minTemp = useMemo(
+    () => dailyData?.temperature2mMin[0].toFixed(),
+    [dailyData],
+  );
+  const maxTemp = useMemo(
+    () => dailyData?.temperature2mMax[0].toFixed(),
+    [dailyData],
+  );
+  const currentTemp = useMemo(
+    () => currentData?.temperature2m.toFixed(),
+    [currentData],
+  );
 
   return (
-    <div className="card-wrapper">
-      <div className="left-part-wrapper">
-        <p className="city-name">New York</p>
-        <p className="city-time">{currentTime}</p>
+    <div className={styles.cardWrapper}>
+      <div className={styles.leftPartWrapper}>
+        <p className={styles.cityName}>New York</p>
+        <p className={styles.cityTime}>{currentTime}</p>
+        <p className={styles.weatherCondition}>Partly Cloudy</p>
       </div>
       <TempBlock
         maxTemp={maxTemp}

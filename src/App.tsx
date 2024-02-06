@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
 import { fetchData } from "./api/utils";
-import { params, url } from "./api/data";
+import { params } from "./api/data";
 import { WeatherData } from "./api/types";
 import MainPart from "./components/MainPart/MainPart";
 import { SideBar } from "./components/SideBar/SideBar";
@@ -21,7 +21,8 @@ function App() {
 
   useEffect(() => {
     const fetchAllData = async () => {
-      const data = await fetchData(url, params);
+      const URL = process.env.REACT_APP_URL as string;
+      const data = await fetchData(URL, params);
       setWeatherData(data);
       setIsLoading(false);
     };

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
+import styles from "./tempBlock.module.css";
 
 interface TempBlockProps {
   maxTemp?: string;
@@ -6,12 +7,16 @@ interface TempBlockProps {
   currentTemp?: string;
 }
 
-export function TempBlock({ maxTemp, minTemp, currentTemp }: TempBlockProps) {
-  return (
-    <div className="right-part-wrapper">
-      <div className="current-temperature">{currentTemp}°</div>
-      <div className="sub-temperature">H:{maxTemp}°</div>
-      <div className="sub-temperature">L:{minTemp}°</div>
-    </div>
-  );
-}
+export const TempBlock = memo(
+  ({ maxTemp, minTemp, currentTemp }: TempBlockProps) => {
+    return (
+      <div className={styles.rightPartWrapper}>
+        <div className={styles.currentTemperature}>{currentTemp}°</div>
+        <div className={styles.subWrapper}>
+          <div className={styles.subTemperature}>H:{maxTemp}°</div>
+          <div className={styles.subTemperature}>L:{minTemp}°</div>
+        </div>
+      </div>
+    );
+  },
+);

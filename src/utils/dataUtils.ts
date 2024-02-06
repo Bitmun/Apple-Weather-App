@@ -39,3 +39,14 @@ export const filterHourlyData = (
     relativeHumidity2m: filteredRelativeHumidity2m,
   };
 };
+
+export const formatTime = (date?: Date) => {
+  if (!date) {
+    return "";
+  }
+  return date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+};
