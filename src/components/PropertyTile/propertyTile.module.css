@@ -1,0 +1,32 @@
+.tileWrapper {
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 18.505px;
+  border: 0.617px solid rgba(255, 255, 255, 0.25);
+  background: rgba(224, 114, 114, 0.1);
+  backdrop-filter: blur(145px);
+}
+
+.firstRow {
+  text-align: center;
+  display: flex;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.value {
+  color: #3C3C3C;
+  font-size: 44px;
+  font-weight: 400;
+  padding-bottom: 40%;
+}
+
+.picture {
+  padding: 1%;
+  padding-right: 5%;
+}

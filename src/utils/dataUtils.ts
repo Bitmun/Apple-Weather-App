@@ -16,6 +16,7 @@ export const filterHourlyData = (
   const filteredTime: Date[] = [];
   const filteredTemperature2m = new Float32Array(forecastLength);
   const filteredRelativeHumidity2m = new Float32Array(forecastLength);
+  const filteredVisability = new Float32Array(forecastLength);
 
   for (let i = 0; i < 24; i++) {
     const currentTime = hourlyData.time[i];
@@ -30,6 +31,10 @@ export const filterHourlyData = (
         hourlyData.relativeHumidity2m.subarray(i, i + 1),
         filteredTime.length - 1,
       );
+      filteredVisability.set(
+        hourlyData.visibility.subarray(i, i + 1),
+        filteredTime.length - 1,
+      );
     }
   }
 
@@ -37,16 +42,27 @@ export const filterHourlyData = (
     time: filteredTime,
     temperature2m: filteredTemperature2m,
     relativeHumidity2m: filteredRelativeHumidity2m,
+    visibility: filteredVisability,
   };
 };
 
 export const formatTime = (date?: Date) => {
   if (!date) {
-    return "";
+    return "No date";
   }
   return date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
   });
+};
+
+export const shorterTimeFormat = (date?: Date) => {
+  if (!date) {
+    return "No date";
+  }
+  let hours = date.getHours();
+  let period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  return hours + period;
 };

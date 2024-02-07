@@ -1,15 +1,29 @@
 .elWrapper {
   display: flex;
   flex-direction: row;
+  width: 95%;
+  border-bottom: solid rgba(66, 66, 66, .5) 1px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .picture {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 3%;
+  padding-right: 129px;
 }
 
 .weekDay {
-  width: 40px;
-  padding-right: 30px;
+  width: 9%;
+  color: #424242;
+  font-size: 22px;
+  font-weight: 500;
 }
 
+
+.subTemp {
+  text-align: center;
+  width: 5%;
+  color: #424242;
+  font-size: 22px;
+  font-weight: 500;
+}
