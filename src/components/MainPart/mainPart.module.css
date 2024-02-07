@@ -1,6 +1,15 @@
-.mainPartWrapper {
+.subPart {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
   padding: 10px;
+  justify-content: space-between;
+}
+
+.mainPartWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  padding-top: 5%;
+  justify-content: space-between;
 }
