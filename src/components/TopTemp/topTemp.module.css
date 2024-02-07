@@ -1,0 +1,55 @@
+.cityName {
+  color: var(--main-text-color);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.185px;
+  padding-top: 4%;
+}
+
+.weatherCode {
+  color: var(--main-text-color);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+:root {
+  --temp-color:#FFF
+}
+
+.currentTemperature {
+  color: var(--main-text-color);
+  margin-top: -20px;
+  text-align: center;
+  font-size: 110px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+}
+
+.subTemperature {
+  color: var(--main-text-color);
+  margin-right: 15px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.subTemperature:last-child {
+  margin-right: 0;
+}
+
+.subWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subTempWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

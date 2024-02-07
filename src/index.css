@@ -1,3 +1,17 @@
+:root {
+  --week-border: #ffffff00;
+  --week-background: #ffffff1a;
+  --title-color: #424242;
+  --main-text-color: #fff;
+  --side-bar-bg: #0094ff26;
+  --tile-border: #ffffff40;
+  --tile-background: #e072721a;
+  --tile-font-color: #3C3C3C;
+  --hours-font-color: #373C42;
+  --hours-border-bottom: #42424280;
+  --border-bottom: #42424280;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

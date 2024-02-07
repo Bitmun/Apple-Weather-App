@@ -3,6 +3,6 @@
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  background: rgba(0, 148, 255, 0.15);
+  background: var(--side-bar-bg);
   backdrop-filter: blur(170px);
 }

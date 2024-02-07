@@ -1,14 +1,10 @@
-:root {
-  --temp-color:#FFF
-}
-
 .rightPartWrapper {
   display: flex;
   flex-direction: column;
 }
 
 .currentTemperature {
-  color: var(--temp-color);
+  color: var(--main-text-color);
   margin-top: -20px;
   text-align: center;
   font-size: 110px;
@@ -17,7 +13,7 @@
 }
 
 .subTemperature {
-  color: var(--temp-color);
+  color: var(--main-text-color);
   margin-right: 15px;
   text-align: center;
   font-size: 21px;

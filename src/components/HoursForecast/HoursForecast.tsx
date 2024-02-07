@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { WeatherDataContext } from "../../App";
-import { filterHourlyData, shorterTimeFormat } from "../../utils/dataUtils";
+import { filterHourlyData, shorterTimeFormat } from "@utils/dataUtils";
 import styles from "./hoursForecast.module.css";
-import weatherPicture from "../../assets/png/cloud.sun.fill.png";
+import weatherPicture from "@assets/png/cloud.sun.fill.png";
 
 export function HoursForecast() {
   const data = useContext(WeatherDataContext);

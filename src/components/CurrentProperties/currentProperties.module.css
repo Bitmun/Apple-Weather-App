@@ -1,6 +1,6 @@
 .propertiesWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 10%;
+  padding-top: 7%;
   row-gap: 2%;
 }

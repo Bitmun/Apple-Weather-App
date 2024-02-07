@@ -2,8 +2,8 @@ import React, { useContext, useMemo } from "react";
 import styles from "./cityCard.module.css";
 import { WeatherDataContext } from "../../App";
 import { TempBlock } from "../TempBlock/TempBlock";
-import { formatTime } from "../../utils/dataUtils";
-import videoBg from "../../assets/mp4/bgRain_optimized.mp4";
+import { formatTime } from "@utils/dataUtils";
+import videoBg from "@assets/mp4/bgRain_optimized.mp4";
 
 export function CityCard() {
   const data = useContext(WeatherDataContext);

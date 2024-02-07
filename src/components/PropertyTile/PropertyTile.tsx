@@ -1,6 +1,6 @@
-import { PropType, refactorPropName } from "../../utils/propertiesUtils";
+import { PropType, refactorPropName } from "@utils/propertiesUtils";
 import React, { useEffect, useState } from "react";
-import img from "../../assets/png/cloud.sun.fill.png";
+import img from "@assets/png/cloud.sun.fill.png";
 import styles from "./propertyTile.module.css";
 import { TileProps } from "./types";
 

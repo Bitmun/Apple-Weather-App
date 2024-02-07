@@ -18,6 +18,17 @@ export function WeekForecast() {
           temperature2mMax: dailyWeather.temperature2mMax[index],
           temperature2mMin: dailyWeather.temperature2mMin[index],
         };
+        {
+          /* для того чтобы их стало 10*/
+        }
+        if (index > 3) {
+          return (
+            <>
+              <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
+              <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
+            </>
+          );
+        }
         return (
           <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
         );
