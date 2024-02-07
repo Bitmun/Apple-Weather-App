@@ -3,7 +3,7 @@ import { WeekForecast } from "../WeekForecast/WeekForecast";
 import styles from "./mainPart.module.css";
 import bgPicture from "../../assets/png/bg.png";
 
-function MainPart() {
+export function MainPart() {
   return (
     <div
       className={styles.mainPartWrapper}
@@ -16,5 +16,3 @@ function MainPart() {
     </div>
   );
 }
-
-export default MainPart;

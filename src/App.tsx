@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { fetchData } from "./api/utils";
 import { params } from "./api/data";
 import { WeatherData } from "./api/types";
-import MainPart from "./components/MainPart/MainPart";
+import { MainPart } from "./components/MainPart/MainPart";
 import { SideBar } from "./components/SideBar/SideBar";
 import styles from "./App.module.css";
 

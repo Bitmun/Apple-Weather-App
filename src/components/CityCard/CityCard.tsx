@@ -32,7 +32,7 @@ export function CityCard() {
       <video className={styles.bgVideo} src={videoBg} autoPlay loop muted />
       <div className={styles.cardWrapper}>
         <div className={styles.leftPartWrapper}>
-          <p className={styles.cityName}>New York</p>
+          <h2 className={styles.cityName}>New York</h2>
           <p className={styles.cityTime}>{currentTime}</p>
           <p className={styles.weatherCondition}>Partly Cloudy</p>
         </div>

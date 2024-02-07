@@ -1,26 +1,26 @@
 import { PropType, refactorPropName } from "../../utils/propertiesUtils";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/png/cloud.sun.fill.png";
 import styles from "./propertyTile.module.css";
+import { TileProps } from "./types";
 
-type Props = {
-  data: PropType<number | string>;
-};
+export function PropertyTile({ data }: TileProps) {
+  const [displayData, setDisplayData] = useState<PropType>();
 
-export function PropertyTile({ data }: Props) {
-  if (typeof data.value === "number") {
-    data.value = data.value.toFixed();
-  } else {
-    refactorPropName(data as PropType<string>);
-  }
+  useEffect(() => {
+    const refactoredData = refactorPropName(data);
+    console.log(refactoredData);
+    setDisplayData(refactoredData);
+  }, []);
+
   return (
     <div className={styles.tileWrapper}>
       <div className={styles.firstRow}>
-        <img className={styles.picture} src={img} />
-        <div className={styles.name}>{data.name}</div>
+        <img className={styles.picture} alt="TileWeatherPicture" src={img} />
+        <p className={styles.name}>{displayData?.name}</p>
       </div>
-      <div className={styles.value}>{data.value}</div>
-      <div className={styles.weatherCode}>Visibility is good</div>
+      <p className={styles.value}>{displayData?.value}</p>
+      <p className={styles.weatherCode}>Visibility is good</p>
     </div>
   );
 }

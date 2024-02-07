@@ -23,7 +23,11 @@ export function HoursForecast() {
           return (
             <div key={el.toISOString()} className={styles.hourWrapper}>
               <p className={styles.timeText}>{formattedTime}</p>
-              <img className={styles.picture} src={weatherPicture} />
+              <img
+                alt="HourlyWeatherPicture"
+                className={styles.picture}
+                src={weatherPicture}
+              />
               <p className={styles.tempText}>
                 {filteredData.temperature2m[index].toFixed()}°
               </p>

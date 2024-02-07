@@ -1,11 +1,6 @@
 import React, { memo } from "react";
 import styles from "./tempBlock.module.css";
-
-interface TempBlockProps {
-  maxTemp?: string;
-  minTemp?: string;
-  currentTemp?: string;
-}
+import { TempBlockProps } from "./types";
 
 export const TempBlock = memo(
   ({ maxTemp, minTemp, currentTemp }: TempBlockProps) => {
