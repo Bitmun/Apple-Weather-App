@@ -1,10 +1,10 @@
 import React, { Dispatch, createContext, useEffect, useState } from "react";
 import { fetchData } from "./api/utils";
-import { params } from "./api/data";
 import { WeatherData } from "./api/types";
 import { MainPart } from "./components/MainPart/MainPart";
 import { SideBar } from "./components/SideBar/SideBar";
 import styles from "./App.module.css";
+import { NYparams } from "./api/data";
 
 interface WeatherContextType {
   weatherData: WeatherData;
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const fetchAllData = async () => {
       const URL = process.env.REACT_APP_URL as string;
-      const data = await fetchData(URL, params);
+      const data = await fetchData(URL, NYparams);
       setWeatherData(data);
       setIsLoading(false);
     };

@@ -44,7 +44,6 @@ export function CityCard({ name, latitude, longitude }: CityCardProps) {
   );
 
   const handleCardClick = () => {
-    console.log(data);
     context?.setWeatherData(data);
   };
 
