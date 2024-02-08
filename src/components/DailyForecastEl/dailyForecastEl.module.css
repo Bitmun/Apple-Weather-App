@@ -51,7 +51,7 @@
   height: 10%;
   margin-left: 6%;
   border-radius: 15px;
-  background-color: #6773da;
+  background-color: var(--bar-background);
   opacity: 51%;
 }
 
@@ -60,5 +60,5 @@
   height: 100%;
   margin-left: 5%;
   margin-right: 6%;
-  background-color: #EF8835;
+  background-color: var(--bar-value);
 }

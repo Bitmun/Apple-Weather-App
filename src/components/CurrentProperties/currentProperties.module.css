@@ -1,10 +1,10 @@
 .propertiesWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 5%;
   justify-items: center;
-  row-gap: 2%;
+  padding-top: 5%;
   margin-bottom: 1%;
+  row-gap: 2%;
 }
 
 

@@ -1,38 +1,32 @@
 .cityName {
-  color: var(--main-text-color);
+  padding-top: 4%;
   text-align: center;
+  color: var(--main-text);
   font-size: 32px;
   font-weight: 400;
   letter-spacing: -0.185px;
-  padding-top: 4%;
 }
 
 .weatherCode {
-  color: var(--main-text-color);
   text-align: center;
+  color: var(--main-text);
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-}
-
-:root {
-  --temp-color:#FFF
 }
 
 .currentTemperature {
-  color: var(--main-text-color);
   margin-top: -10%;
   text-align: center;
+  color: var(--main-text);
   font-size: 110px;
   font-weight: 300;
   letter-spacing: 0.4px;
 }
 
 .subTemperature {
-  color: var(--main-text-color);
   margin-right: 15%;
   text-align: center;
+  color: var(--main-text);
   font-size: 21px;
   font-weight: 500;
 }

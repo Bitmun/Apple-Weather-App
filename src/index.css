@@ -1,15 +1,19 @@
 :root {
   --week-border: #ffffff00;
   --week-background: #ffffff1a;
-  --title-color: #424242;
-  --main-text-color: #fff;
+  --title: #424242;
+  --main-text: #fff;
   --side-bar-bg: #0094ff26;
   --tile-border: #ffffff40;
   --tile-background: #e072721a;
-  --tile-font-color: #3C3C3C;
-  --hours-font-color: #373C42;
+  --tile-font: #3C3C3C;
+  --hours-font: #373C42;
   --hours-border-bottom: #42424280;
   --border-bottom: #42424280;
+  --bar-background: #6773da;
+  --bar-value: #EF8835;
+  --burger-bg: #cccef0;
+  --burger-line-bg: #000000 ;
 }
 
 body {

@@ -1,8 +1,8 @@
 .cardContainer {
   position: relative;
-  color: white;
   width: 95%;
   height: 22%;
+  color: var(--main-text);
 }
 
 .cardWrapper {
@@ -43,18 +43,18 @@
 }
 
 .weatherCondition {
+  padding-top: 2%;
   font-size: 21px;
   font-weight: 400;
   line-height: 133%;
   letter-spacing: 0.3px;
-  padding-top: 2%;
 }
 
 .bgVideo {
   height: 100%;
   width: 100%;
-  object-fit: cover;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 
@@ -66,5 +66,8 @@
 
   .cardContainer {
     height: 40%;
+  }
+  .leftPartWrapper {
+    text-align: center;
   }
 }

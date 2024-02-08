@@ -1,12 +1,12 @@
 .barWrapper {
   display: flex;
   justify-content: center;
-  background-color: white;
-  border-radius: 15px;
   width: 90%;
   padding: 1% 2%;
   margin-top: 2%;
   margin-bottom: 3%;
+  background-color: var(--main-text);
+  border-radius: 15px;
 }
 
 .textInput {

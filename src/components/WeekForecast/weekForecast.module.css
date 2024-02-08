@@ -6,7 +6,7 @@
   justify-content: space-around;
   background: var(--week-background);
   border-radius: 15px;
-  border: 0.5px solid #ffffff00;
+  border: 0.5px solid;
   border-color: var(--week-border);
   backdrop-filter: blur(145px);
 }
@@ -20,7 +20,7 @@
 .title {
   padding-top: 1%;
   padding-bottom: 5%;
-  color: var(--title-color);
+  color: var(--title);
   font-size: 15px;
   font-weight: 500;
 }
