@@ -26,6 +26,8 @@ export const fetchData = async (
       apparentTemperature: current.variables(2)!.value(),
       isDay: current.variables(3)!.value(),
       precipitation: current.variables(4)!.value(),
+      weatherCode: current.variables(5)!.value(),
+      windSpeed10m: current.variables(6)!.value(),
     },
     hourly: {
       time: range(
@@ -35,6 +37,7 @@ export const fetchData = async (
       ).map((t) => new Date((t + utcOffsetSeconds) * 1000)),
       temperature2m: hourly.variables(0)!.valuesArray()!,
       relativeHumidity2m: hourly.variables(1)!.valuesArray()!,
+      visibility: hourly.variables(2)!.valuesArray()!,
     },
     daily: {
       time: range(
@@ -44,6 +47,8 @@ export const fetchData = async (
       ).map((t) => new Date((t + utcOffsetSeconds) * 1000)),
       temperature2mMax: daily.variables(0)!.valuesArray()!,
       temperature2mMin: daily.variables(1)!.valuesArray()!,
+      sunrise: daily.variables(2)!.valuesInt64(0)!,
+      uvIndexMax: daily.variables(3)!.valuesArray()!,
     },
   };
 };

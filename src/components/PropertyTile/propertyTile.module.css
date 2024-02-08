@@ -1,0 +1,42 @@
+:root {
+  --font-color: #373C42;
+  --border: #ffffff40;
+  --background: #e072721a;
+  --first-row-color: #3C3C3C;
+  --value-color: #3C3C3C;
+}
+
+
+.tileWrapper {
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border: 0.617px solid;
+  border-color: var(--border);
+  border-radius: 18px;
+  background: var(--background);
+  backdrop-filter: blur(145px);
+}
+
+.firstRow {
+  text-align: center;
+  display: flex;
+  color: var(--first-row-color);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.value {
+  color: var(--value-color);
+  font-size: 44px;
+  font-weight: 400;
+  padding-bottom: 40%;
+}
+
+.picture {
+  padding: 1%;
+  padding-right: 5%;
+}

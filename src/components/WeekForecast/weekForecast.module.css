@@ -1,5 +1,31 @@
+:root {
+  --border: #ffffff00;
+  --background: #ffffff1a;
+  --title-color: #424242;
+}
+
+
 .weekWrapper {
   display: flex;
   flex-direction: column;
+  width: 536px;
+  margin-left: 5%;
+  background: var(--background);
+  border-radius: 15px;
+  border: 0.5px solid #ffffff00;
+  border-color: var(--border);
+  backdrop-filter: blur(145px);
+}
+
+.weekWrapper:nth-child(1) {
   align-items: center;
+  padding-top: 1%;
+}
+
+.title {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  color: var(--title-color);
+  font-size: 15px;
+  font-weight: 500;
 }

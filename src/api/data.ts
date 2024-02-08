@@ -7,10 +7,15 @@ export const params: Params = {
     "temperature_2m",
     "relative_humidity_2m",
     "apparent_temperature",
-    "is_day",
-    "precipitation",
+    "weather_code",
   ],
-  hourly: ["temperature_2m", "relative_humidity_2m"],
-  daily: ["temperature_2m_max", "temperature_2m_min"],
+
+  hourly: ["temperature_2m", "relative_humidity_2m", "visibility"],
+  daily: [
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "sunrise",
+    "uv_index_max",
+  ],
   timezone: "auto",
 };

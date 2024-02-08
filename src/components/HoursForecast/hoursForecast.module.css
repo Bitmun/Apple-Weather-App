@@ -1,0 +1,58 @@
+:root {
+  --font-color: #373C42;
+  --border-bottom: #42424280;
+  --background: #ffffff1a;
+}
+
+.hoursWrapper {
+  display: flex;
+  width: 603px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tempText {
+  color: var(--font-color);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.weatherCode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 1%;
+  border-bottom: solid 1px;
+  border-color: var(--border-bottom);
+}
+
+.timeText {
+  margin-top: 30%;
+  color: var(--font-color);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.hourWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 6%;
+}
+
+.hourWrapper:last-child {
+  padding-right: 5px;
+}
+
+.picture {
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+
+.hoursContainer {
+  height: 180px;
+  border-radius: 15px;
+  background: var(--background);
+  backdrop-filter: blur(145px);
+  padding: 2%;
+}

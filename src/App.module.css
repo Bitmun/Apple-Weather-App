@@ -5,4 +5,5 @@ p {
 .appWrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  max-width: 1920px;
 }
