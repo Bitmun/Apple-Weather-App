@@ -13,8 +13,8 @@ const GENcoords = {
   longitude: 6.1457,
 };
 
-export const NYparams: Params = getParams(40.7143, -74.006);
+export const NYparams: Params = getParams(40.7143, -74.006, "New York");
 
-export const GENparams: Params = getParams(40.7143, -74.006);
+export const GENparams: Params = getParams(40.7143, -74.006, "Geneva");
 
 export const coords = [NYcoords, GENcoords];

@@ -19,6 +19,7 @@ export const fetchData = async (
   const daily = response.daily()!;
 
   return {
+    name: params.name,
     current: {
       time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
       temperature2m: current.variables(0)!.value(),
@@ -53,8 +54,13 @@ export const fetchData = async (
   };
 };
 
-export const getParams = (latitude: number, longitude: number): Params => {
+export const getParams = (
+  latitude: number,
+  longitude: number,
+  name: string,
+): Params => {
   return {
+    name: name,
     latitude: latitude,
     longitude: longitude,
     current: [
