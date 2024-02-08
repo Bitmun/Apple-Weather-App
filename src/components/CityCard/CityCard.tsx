@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./cityCard.module.css";
 import { TempBlock } from "../TempBlock/TempBlock";
 import { formatTime } from "@utils/dataUtils";
-import videoBg from "@assets/mp4/bgRain_optimized.mp4";
+import rainBg from "@assets/mp4/bgRain_optimized.mp4";
+import cloudyBg from "@assets/mp4/white_clouds_optimized.mp4";
 import { CityCardProps } from "./types";
 import { WeatherData } from "../../api/types";
 import { fetchData, getParams } from "../../api/utils";
@@ -13,10 +14,14 @@ export function CityCard({ name, latitude, longitude }: CityCardProps) {
 
   const context = useContext(WeatherDataContext);
 
+  let bgToDisplay = rainBg;
+
+  if (name === "New York") bgToDisplay = cloudyBg;
+
   useEffect(() => {
     const fetchAllData = async () => {
       const URL = process.env.REACT_APP_URL as string;
-      const params = getParams(latitude, longitude);
+      const params = getParams(latitude, longitude, name);
       const res = await fetchData(URL, params);
       setData(res);
     };
@@ -49,7 +54,7 @@ export function CityCard({ name, latitude, longitude }: CityCardProps) {
 
   return (
     <div className={styles.cardContainer} onClick={handleCardClick}>
-      <video className={styles.bgVideo} src={videoBg} autoPlay loop muted />
+      <video className={styles.bgVideo} src={bgToDisplay} autoPlay loop muted />
       <div className={styles.cardWrapper}>
         <div className={styles.leftPartWrapper}>
           <p className={styles.cityName}>{name}</p>
