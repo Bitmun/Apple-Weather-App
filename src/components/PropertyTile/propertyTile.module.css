@@ -24,7 +24,7 @@
   color: var(--tile-value-color);
   font-size: 44px;
   font-weight: 400;
-  padding-bottom: 40%;
+  padding-bottom: 10%;
 }
 
 .picture {
@@ -32,6 +32,9 @@
   padding-right: 5%;
 }
 
+.propImg {
+  max-width: 100%;
+}
 
 .tileWeatherCode {
   text-align: center;

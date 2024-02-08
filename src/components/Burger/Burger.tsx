@@ -10,14 +10,18 @@ export default function Burger() {
   return (
     <div className={styles.burgerWrapper}>
       {isOpened ? (
-        <div className={styles.burgerContainer}>
-          <div className={styles.burger}>
-            <button onClick={handelClick}>Close</button>
-            <CityCard />
-          </div>
+        <div className={styles.burger}>
+          <button className={styles.closeButton} onClick={handelClick}>
+            Close
+          </button>
+          <CityCard />
         </div>
       ) : (
-        <button onClick={handelClick}>Open</button>
+        <button className={styles.openButton} onClick={handelClick}>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+        </button>
       )}
     </div>
   );

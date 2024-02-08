@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import img from "@assets/png/cloud.sun.fill.png";
 import styles from "./propertyTile.module.css";
 import { TileProps } from "./types";
+import propImg from "@assets/png/propImage.png";
 
 export function PropertyTile({ data }: TileProps) {
   const [displayData, setDisplayData] = useState<PropType>();
@@ -19,6 +20,7 @@ export function PropertyTile({ data }: TileProps) {
         <p className={styles.name}>{displayData?.name}</p>
       </div>
       <p className={styles.value}>{displayData?.value}</p>
+      <img className={styles.propImg} src={propImg} alt="propImg" />
       <p className={styles.tileWeatherCode}>Visibility is good</p>
     </div>
   );

@@ -20,7 +20,6 @@
 }
 
 .leftPartWrapper {
-  padding-top: 5%;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   align-items: flex-start;
@@ -56,4 +55,16 @@
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
+}
+
+
+@media (max-width: 599px) {
+  .cardWrapper {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  .cardContainer {
+    height: 40%;
+  }
 }
