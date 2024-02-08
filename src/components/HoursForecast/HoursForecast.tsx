@@ -14,7 +14,7 @@ export function HoursForecast() {
   const filteredData = filterHourlyData(hourlyData, currentTime, 10);
   return (
     <div className={styles.hoursContainer}>
-      <p className={styles.weatherCode}>
+      <p className={styles.hoursWeatherCode}>
         Cloudy conditions from 1AM-9AM, with showers expected at 9AM.
       </p>
       <div className={styles.hoursWrapper}>

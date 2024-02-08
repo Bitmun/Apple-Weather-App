@@ -32,6 +32,21 @@
   padding-right: 5%;
 }
 
-.weatherCode {
+
+.tileWeatherCode {
   text-align: center;
 }
+
+@media (max-width: 1450px) {
+  .value {
+    font-size: 36px;
+  }
+
+  .firstRow {
+    font-size: 16px;
+  }
+  .tileWeatherCode {
+    font-size: 18px;
+  }
+}
+

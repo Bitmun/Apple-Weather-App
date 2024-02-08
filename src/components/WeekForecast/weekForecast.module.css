@@ -24,3 +24,9 @@
   font-size: 15px;
   font-weight: 500;
 }
+
+@media (max-width: 1199px) {
+  .weekWrapper {
+    margin-bottom: 2%;
+  }
+}

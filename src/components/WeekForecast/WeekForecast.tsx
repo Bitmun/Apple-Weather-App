@@ -11,24 +11,13 @@ export function WeekForecast() {
 
   return (
     <div className={styles.weekWrapper}>
-      <div className={styles.title}>10-DAY FORECAST</div>
+      <div className={styles.title}>7-DAY FORECAST</div>
       {dailyWeather?.time.map((el, index) => {
         const dayWeather: DayData = {
           time: el,
           temperature2mMax: dailyWeather.temperature2mMax[index],
           temperature2mMin: dailyWeather.temperature2mMin[index],
         };
-        {
-          /* для того чтобы их стало 10*/
-        }
-        if (index > 3) {
-          return (
-            <>
-              <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
-              <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
-            </>
-          );
-        }
         return (
           <DailyForecastEl key={el.toISOString()} dayWeather={dayWeather} />
         );

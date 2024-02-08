@@ -6,3 +6,9 @@
   background: var(--side-bar-bg);
   backdrop-filter: blur(170px);
 }
+
+@media (max-width: 1679px) {
+  .sidebarWrapper {
+    display: none;
+  }
+}

@@ -9,7 +9,6 @@ export function PropertyTile({ data }: TileProps) {
 
   useEffect(() => {
     const refactoredData = refactorPropName(data);
-    console.log(refactoredData);
     setDisplayData(refactoredData);
   }, []);
 
@@ -20,7 +19,7 @@ export function PropertyTile({ data }: TileProps) {
         <p className={styles.name}>{displayData?.name}</p>
       </div>
       <p className={styles.value}>{displayData?.value}</p>
-      <p className={styles.weatherCode}>Visibility is good</p>
+      <p className={styles.tileWeatherCode}>Visibility is good</p>
     </div>
   );
 }
