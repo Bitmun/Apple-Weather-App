@@ -11,7 +11,7 @@ export function WeekForecast() {
 
   return (
     <div className={styles.weekWrapper}>
-      <div className={styles.title}>7-DAY FORECAST</div>
+      <div className={styles.title}>10-DAY FORECAST</div>
       {dailyWeather?.time.map((el, index) => {
         const dayWeather: DayData = {
           time: el,

@@ -1,6 +1,6 @@
 .hoursWrapper {
   display: flex;
-  width: 603px;
+  width: 100%;
   justify-content: space-between;
   align-items: flex-start;
 }
@@ -35,7 +35,7 @@
 }
 
 .hourWrapper:last-child {
-  padding-right: 5px;
+  padding-right: 1%;
 }
 
 .picture {
@@ -44,7 +44,7 @@
 }
 
 .hoursContainer {
-  height: 180px;
+  height: fit-content;
   border-radius: 15px;
   background: var(--week-background);
   backdrop-filter: blur(145px);

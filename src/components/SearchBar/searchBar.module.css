@@ -1,0 +1,16 @@
+.barWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 15px;
+  width: 90%;
+  padding: 1% 2%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.textInput {
+  width: 100%;
+  border-width: 0;
+  margin-left: 2%;
+}

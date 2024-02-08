@@ -22,7 +22,7 @@
 
 .currentTemperature {
   color: var(--main-text-color);
-  margin-top: -20px;
+  margin-top: -10%;
   text-align: center;
   font-size: 110px;
   font-weight: 300;
@@ -31,7 +31,7 @@
 
 .subTemperature {
   color: var(--main-text-color);
-  margin-right: 15px;
+  margin-right: 15%;
   text-align: center;
   font-size: 21px;
   font-weight: 500;
@@ -52,4 +52,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.topWrapper {
+  z-index: 99;
 }

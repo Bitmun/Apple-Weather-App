@@ -22,7 +22,7 @@ export function TopTemp() {
     [currentData],
   );
   return (
-    <div>
+    <div className={styles.topWrapper}>
       <p className={styles.cityName}>New York</p>
       <div className={styles.rightPartWrapper}>
         <p className={styles.currentTemperature}>{currentTemp}°</p>

@@ -1,9 +1,8 @@
 .tileWrapper {
   box-sizing: border-box;
-  height: 200px;
-  width: 200px;
-  padding: 10px;
-  border: 0.617px solid;
+  width: 90%;
+  padding: 5% 10%;
+  border: 0.6px solid;
   border-color: var(--tile-border);
   border-radius: 18px;
   background: var(--tile-background);
@@ -11,10 +10,11 @@
 }
 
 .firstRow {
-  text-align: center;
   display: flex;
+  align-items: center;
+  text-align: center;
   color: var(--tile-font-color);
-  font-size: 18px;
+  font-size: 100%;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -30,4 +30,8 @@
 .picture {
   padding: 1%;
   padding-right: 5%;
+}
+
+.weatherCode {
+  text-align: center;
 }

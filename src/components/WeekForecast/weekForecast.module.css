@@ -18,8 +18,8 @@
 }
 
 .title {
-  padding-top: 5px;
-  padding-bottom: 20px;
+  padding-top: 1%;
+  padding-bottom: 5%;
   color: var(--title-color);
   font-size: 15px;
   font-weight: 500;
