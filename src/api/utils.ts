@@ -52,3 +52,25 @@ export const fetchData = async (
     },
   };
 };
+
+export const getParams = (latitude: number, longitude: number): Params => {
+  return {
+    latitude: latitude,
+    longitude: longitude,
+    current: [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "apparent_temperature",
+      "weather_code",
+    ],
+
+    hourly: ["temperature_2m", "relative_humidity_2m", "visibility"],
+    daily: [
+      "temperature_2m_max",
+      "temperature_2m_min",
+      "sunrise",
+      "uv_index_max",
+    ],
+    timezone: "auto",
+  };
+};

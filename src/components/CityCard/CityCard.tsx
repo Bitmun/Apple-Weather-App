@@ -1,16 +1,32 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./cityCard.module.css";
-import { WeatherDataContext } from "../../App";
 import { TempBlock } from "../TempBlock/TempBlock";
 import { formatTime } from "@utils/dataUtils";
 import videoBg from "@assets/mp4/bgRain_optimized.mp4";
+import { CityCardProps } from "./types";
+import { WeatherData } from "../../api/types";
+import { fetchData, getParams } from "../../api/utils";
+import { WeatherDataContext } from "../../App";
 
-export function CityCard() {
-  const data = useContext(WeatherDataContext);
+export function CityCard({ name, latitude, longitude }: CityCardProps) {
+  const [data, setData] = useState<WeatherData>();
 
-  const currentData = data?.weatherData.current;
+  const context = useContext(WeatherDataContext);
 
-  const dailyData = data?.weatherData.daily;
+  useEffect(() => {
+    const fetchAllData = async () => {
+      const URL = process.env.REACT_APP_URL as string;
+      const params = getParams(latitude, longitude);
+      const res = await fetchData(URL, params);
+      setData(res);
+    };
+
+    fetchAllData();
+  }, []);
+
+  const currentData = data?.current;
+
+  const dailyData = data?.daily;
 
   const currentTime = formatTime(currentData?.time);
 
@@ -27,12 +43,17 @@ export function CityCard() {
     [currentData],
   );
 
+  const handleCardClick = () => {
+    console.log(data);
+    context?.setWeatherData(data);
+  };
+
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer} onClick={handleCardClick}>
       <video className={styles.bgVideo} src={videoBg} autoPlay loop muted />
       <div className={styles.cardWrapper}>
         <div className={styles.leftPartWrapper}>
-          <p className={styles.cityName}>New York</p>
+          <p className={styles.cityName}>{name}</p>
           <p className={styles.cityTime}>{currentTime}</p>
           <p className={styles.weatherCondition}>Partly Cloudy</p>
         </div>

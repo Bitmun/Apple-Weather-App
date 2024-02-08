@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { Dispatch, createContext, useEffect, useState } from "react";
 import { fetchData } from "./api/utils";
 import { params } from "./api/data";
 import { WeatherData } from "./api/types";
@@ -8,6 +8,7 @@ import styles from "./App.module.css";
 
 interface WeatherContextType {
   weatherData: WeatherData;
+  setWeatherData: Dispatch<React.SetStateAction<WeatherData | undefined>>;
 }
 
 export const WeatherDataContext = createContext<WeatherContextType | null>(
@@ -35,7 +36,7 @@ function App() {
   }
 
   return (
-    <WeatherDataContext.Provider value={{ weatherData }}>
+    <WeatherDataContext.Provider value={{ weatherData, setWeatherData }}>
       <div className={styles.appWrapper}>
         <MainPart />
         <SideBar />

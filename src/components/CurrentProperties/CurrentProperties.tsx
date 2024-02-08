@@ -29,9 +29,10 @@ export function CurrentProperties() {
   }
 
   const allProps = dailyProps?.concat(currentProps).concat(hourlyProps);
+
   return (
     <div className={styles.propertiesWrapper}>
-      {allProps?.map((prop) => <PropertyTile key={prop.name} data={prop} />)}
+      {allProps?.map((prop) => <PropertyTile key={prop.value} data={prop} />)}
     </div>
   );
 }

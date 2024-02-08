@@ -4,6 +4,8 @@ import { CityCard } from "../CityCard/CityCard";
 
 export default function Burger() {
   const [isOpened, setIsOpened] = useState(false);
+  const lat1 = 40.7143;
+  const long1 = -74.006;
   const handelClick = () => {
     setIsOpened(!isOpened);
   };
@@ -14,7 +16,7 @@ export default function Burger() {
           <button className={styles.closeButton} onClick={handelClick}>
             Close
           </button>
-          <CityCard />
+          <CityCard name="New York" latitude={lat1} longitude={long1} />
         </div>
       ) : (
         <button className={styles.openButton} onClick={handelClick}>
