@@ -11,7 +11,7 @@ type Props = {
 export default function HourEl({ el, temp }: Props) {
   const formattedTime = shorterTimeFormat(el);
   return (
-    <div key={el.toISOString()} className={styles.hourWrapper}>
+    <div className={styles.hourWrapper}>
       <p className={styles.timeText}>{formattedTime}</p>
       <img
         alt="HourlyWeatherPicture"
