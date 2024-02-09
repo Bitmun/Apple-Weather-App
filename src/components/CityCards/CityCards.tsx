@@ -1,11 +1,11 @@
-import { coords } from "../../api/data";
 import React from "react";
 import { CityCard } from "../CityCard/CityCard";
+import { CityCardsProps } from "./types";
 
-export default function CityCards() {
+export default function CityCards({ coordsToDisplay }: CityCardsProps) {
   return (
     <>
-      {coords.map((el) => (
+      {coordsToDisplay.map((el) => (
         <CityCard
           key={el.latitude}
           name={el.name}

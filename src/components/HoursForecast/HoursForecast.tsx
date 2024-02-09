@@ -16,7 +16,6 @@ export function HoursForecast() {
     toast("no filtered data(");
     return <div>No filtered data</div>;
   }
-  console.log(filteredData);
   return (
     <div className={styles.hoursContainer}>
       <p className={styles.hoursWeatherCode}>

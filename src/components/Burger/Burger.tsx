@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./burger.module.css";
 import CityCards from "../CityCards/CityCards";
+import { coords } from "../../api/data";
 
 export default function Burger() {
   const [isOpened, setIsOpened] = useState(false);
@@ -14,7 +15,7 @@ export default function Burger() {
           <button className={styles.closeButton} onClick={handelClick}>
             Close
           </button>
-          <CityCards />
+          <CityCards coordsToDisplay={coords} />
         </div>
       ) : (
         <button className={styles.openButton} onClick={handelClick}>
