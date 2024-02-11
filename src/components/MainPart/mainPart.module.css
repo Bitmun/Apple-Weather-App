@@ -1,6 +1,35 @@
-.mainPartWrapper {
+.subPart {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 1%;
   justify-content: space-between;
-  padding: 10px;
+}
+
+.mainPartWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  height: 100vh;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainBgVideo {
+  position:fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+  .subPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1%;
+  }
 }

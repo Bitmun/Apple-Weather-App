@@ -5,5 +5,12 @@ p {
 .appWrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  justify-content: center;
   max-width: 1920px;
+}
+
+@media (max-width: 1679px) {
+  .appWrapper {
+    display: flex;
+  }
 }

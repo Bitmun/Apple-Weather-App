@@ -1,47 +1,41 @@
-:root {
-  --font-color: #373C42;
-  --border-bottom: #42424280;
-  --background: #ffffff1a;
-}
-
 .hoursWrapper {
   display: flex;
-  width: 603px;
+  width: 100%;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 .tempText {
-  color: var(--font-color);
+  color: var(--hours-font-color);
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.1px;
 }
 
-.weatherCode {
+.hoursWeatherCode {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: 1%;
   border-bottom: solid 1px;
-  border-color: var(--border-bottom);
+  border-color: var(--hours-border-bottom);
 }
 
 .timeText {
   margin-top: 30%;
-  color: var(--font-color);
   font-size: 17px;
+  color: var(--hours-font-color);
   font-weight: 500;
 }
 
 .hourWrapper {
   display: flex;
   flex-direction: column;
-  text-align: center;
   width: 6%;
+  text-align: center;
 }
 
 .hourWrapper:last-child {
-  padding-right: 5px;
+  padding-right: 1%;
 }
 
 .picture {
@@ -50,9 +44,20 @@
 }
 
 .hoursContainer {
-  height: 180px;
-  border-radius: 15px;
-  background: var(--background);
-  backdrop-filter: blur(145px);
+  height: fit-content;
   padding: 2%;
+  border-radius: 15px;
+  background: var(--week-background);
+  backdrop-filter: blur(145px);
+}
+
+
+@media (max-width: 779px) {
+  .timeText {    
+    font-size: 12px;
+  }
+  .tempText {
+    font-size: 20px;
+  }
+  
 }

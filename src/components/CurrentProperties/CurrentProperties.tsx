@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { WeatherDataContext } from "../../App";
 import styles from "./currentProperties.module.css";
 import { PropertyTile } from "../PropertyTile/PropertyTile";
-import { getProps } from "../../utils/propertiesUtils";
+import { getProps } from "@utils/propertiesUtils";
 import { toast } from "react-toastify";
 
 export function CurrentProperties() {

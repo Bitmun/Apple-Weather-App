@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { WeatherDataContext } from "../../App";
-import { filterHourlyData, shorterTimeFormat } from "../../utils/dataUtils";
+import { filterHourlyData, shorterTimeFormat } from "@utils/dataUtils";
 import styles from "./hoursForecast.module.css";
-import weatherPicture from "../../assets/png/cloud.sun.fill.png";
+import weatherPicture from "@assets/png/cloud.sun.fill.png";
 
 export function HoursForecast() {
   const data = useContext(WeatherDataContext);
@@ -14,7 +14,7 @@ export function HoursForecast() {
   const filteredData = filterHourlyData(hourlyData, currentTime, 10);
   return (
     <div className={styles.hoursContainer}>
-      <p className={styles.weatherCode}>
+      <p className={styles.hoursWeatherCode}>
         Cloudy conditions from 1AM-9AM, with showers expected at 9AM.
       </p>
       <div className={styles.hoursWrapper}>

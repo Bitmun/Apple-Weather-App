@@ -1,0 +1,50 @@
+.burgerWrapper {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 2%;
+  z-index: 4;
+}
+
+.burger {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  background-color: var(--burger-bg);
+}
+
+.closeButton {
+  padding: 2%;
+  margin: 2%;
+  border: 0;
+  border-radius: 5px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--burger-line-bg);
+}
+
+.openButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border: 0;
+  background-color: var(--bar-background)
+}
+
+@media (min-width: 1680px) {
+  .burgerWrapper {
+    display: none;
+  }
+}

@@ -1,6 +1,16 @@
 .propertiesWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 10%;
+  justify-items: center;
+  padding-top: 5%;
+  margin-bottom: 1%;
   row-gap: 2%;
+}
+
+
+@media (max-width: 779px) {
+  .propertiesWrapper {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 3%;
+  }
 }
