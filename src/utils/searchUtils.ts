@@ -15,10 +15,8 @@ export function debounce<Func extends (...args: any[]) => any>(
 }
 
 export const filterItems = (itemsList: Array<Coords>, query: string) => {
-  const filteredItems = itemsList.filter(
-    (item) =>
-      item.name.toLowerCase().includes(query) ||
-      item.name.toLowerCase().includes(query),
+  const filteredItems = itemsList.filter((item) =>
+    item.name.toLowerCase().includes(query),
   );
   return filteredItems;
 };

@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./cityCard.module.css";
 import { TempBlock } from "../TempBlock/TempBlock";
 import { formatTime } from "@utils/dataUtils";
-import rainBg from "@assets/mp4/bgRain_optimized.mp4";
-import cloudyBg from "@assets/mp4/white_clouds_optimized.mp4";
+import rainBg from "@assets/mp4/bgRain.mp4";
+import cloudyBg from "@assets/mp4/bgClouds.mp4";
 import { CityCardProps } from "./types";
 import { WeatherData } from "../../api/types";
 import { fetchData, getParams } from "../../api/utils";
@@ -11,6 +11,11 @@ import { WeatherDataContext } from "../../App";
 
 export function CityCard({ name, latitude, longitude }: CityCardProps) {
   const [data, setData] = useState<WeatherData>();
+  const [isLoading, setIsLoading] = useState(true);
+
+  {
+    /*Hardcode bg */
+  }
 
   const context = useContext(WeatherDataContext);
 
@@ -24,6 +29,7 @@ export function CityCard({ name, latitude, longitude }: CityCardProps) {
       const params = getParams(latitude, longitude, name);
       const res = await fetchData(URL, params);
       setData(res);
+      setIsLoading(false);
     };
 
     fetchAllData();
@@ -57,9 +63,19 @@ export function CityCard({ name, latitude, longitude }: CityCardProps) {
       <video className={styles.bgVideo} src={bgToDisplay} autoPlay loop muted />
       <div className={styles.cardWrapper}>
         <div className={styles.leftPartWrapper}>
-          <p className={styles.cityName}>{name}</p>
-          <p className={styles.cityTime}>{currentTime}</p>
-          <p className={styles.weatherCondition}>Partly Cloudy</p>
+          {isLoading ? (
+            <>
+              <p className={styles.cityName}>loading</p>
+              <p className={styles.cityTime}>loading</p>
+              <p className={styles.weatherCondition}>loading</p>
+            </>
+          ) : (
+            <>
+              <p className={styles.cityName}>{name}</p>
+              <p className={styles.cityTime}>{currentTime}</p>
+              <p className={styles.weatherCondition}>Partly Cloudy</p>
+            </>
+          )}
         </div>
         <TempBlock
           maxTemp={maxTemp}

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./searchBar.module.css";
-import logo from "@assets/png/ant-design_search-outlined.png";
+import logo from "@assets/png/searchLogo.png";
 import { SearchBarProps } from "./types";
 
 export function SearchBar({ handleSearch }: SearchBarProps) {

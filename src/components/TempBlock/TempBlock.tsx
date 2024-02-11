@@ -6,10 +6,10 @@ export const TempBlock = memo(
   ({ maxTemp, minTemp, currentTemp }: TempBlockProps) => {
     return (
       <div className={styles.rightPartWrapper}>
-        <div className={styles.currentTemperature}>{currentTemp}°</div>
+        <p className={styles.currentTemperature}>{currentTemp}°</p>
         <div className={styles.subWrapper}>
-          <div className={styles.subTemperature}>H:{maxTemp}°</div>
-          <div className={styles.subTemperature}>L:{minTemp}°</div>
+          <p className={styles.subTemperature}>H:{maxTemp}°</p>
+          <p className={styles.subTemperature}>L:{minTemp}°</p>
         </div>
       </div>
     );

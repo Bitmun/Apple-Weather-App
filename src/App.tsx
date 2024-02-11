@@ -38,8 +38,10 @@ function App() {
   return (
     <WeatherDataContext.Provider value={{ weatherData, setWeatherData }}>
       <div className={styles.appWrapper}>
-        <MainPart />
-        <SideBar />
+        <div className={styles.appContainer}>
+          <MainPart />
+          <SideBar />
+        </div>
       </div>
     </WeatherDataContext.Provider>
   );

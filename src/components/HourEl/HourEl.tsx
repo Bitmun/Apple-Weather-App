@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./hourEl.module.css";
-import weatherPicture from "@assets/png/cloud.sun.fill.png";
+import weatherPicture from "@assets/png/cloudSun.png";
 import { shorterTimeFormat } from "@utils/dataUtils";
 
 type Props = {

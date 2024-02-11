@@ -1,9 +1,9 @@
 import { PropType, refactorPropName } from "@utils/propertiesUtils";
 import React, { useEffect, useState } from "react";
-import img from "@assets/png/cloud.sun.fill.png";
+import img from "@assets/png/cloudSun.png";
 import styles from "./propertyTile.module.css";
 import { TileProps } from "./types";
-import propImg from "@assets/png/propImage.png";
+import propImg from "@assets/png/uvProp.png";
 
 export function PropertyTile({ data }: TileProps) {
   const [displayData, setDisplayData] = useState<PropType>();
