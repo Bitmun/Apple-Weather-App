@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { WeatherDataContext } from "../../App";
 import { filterHourlyData } from "@utils/dataUtils";
 import styles from "./hoursForecast.module.css";
@@ -8,13 +8,16 @@ import { toast } from "react-toastify";
 export function HoursForecast() {
   const data = useContext(WeatherDataContext);
 
-  const hourlyData = data?.weatherData.hourly;
-  const currentTime = data?.weatherData?.current.time;
+  const hourlyData = useMemo(() => data?.weatherData?.hourly, [data]);
+  const currentTime = useMemo(() => data?.weatherData?.current?.time, [data]);
 
-  const filteredData = filterHourlyData(hourlyData, currentTime, 10);
+  const filteredData = useMemo(
+    () => filterHourlyData(hourlyData, currentTime, 10),
+    [data],
+  );
   if (!filteredData) {
     toast("no filtered data(");
-    return <div>No filtered data</div>;
+    return <p>No filtered data</p>;
   }
   return (
     <div className={styles.hoursContainer}>

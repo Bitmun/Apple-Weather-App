@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./hourEl.module.css";
 import weatherPicture from "@assets/png/cloudSun.png";
 import { shorterTimeFormat } from "@utils/dataUtils";
@@ -8,7 +8,7 @@ type Props = {
   temp: number;
 };
 
-export default function HourEl({ el, temp }: Props) {
+export default memo(function HourEl({ el, temp }: Props) {
   const formattedTime = shorterTimeFormat(el);
   return (
     <div className={styles.hourWrapper}>
@@ -21,4 +21,4 @@ export default function HourEl({ el, temp }: Props) {
       <p className={styles.tempText}>{temp.toFixed()}°</p>
     </div>
   );
-}
+});
