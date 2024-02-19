@@ -9,8 +9,8 @@ export function CurrentProperties() {
   const data = useContext(WeatherDataContext);
 
   if (!data?.weatherData) {
-    toast("No weather data");
-    return <div>No weather data...</div>;
+    toast("No weather props data");
+    return <p>No weather data...</p>;
   }
 
   const { current, daily, hourly } = data?.weatherData;
@@ -23,15 +23,16 @@ export function CurrentProperties() {
   const dailyProps = getProps(dailyPropsToGet, daily);
   const currentProps = getProps(currentPropsToGet, current);
 
-  if (!currentProps || !hourlyProps) {
+  if (!currentProps || !hourlyProps || !dailyProps) {
     toast("Some props error");
-    return <div>No data...</div>;
+    return <p>No data...</p>;
   }
 
-  const allProps = dailyProps?.concat(currentProps).concat(hourlyProps);
+  const allProps = dailyProps.concat(currentProps).concat(hourlyProps);
+
   return (
     <div className={styles.propertiesWrapper}>
-      {allProps?.map((prop) => <PropertyTile key={prop.name} data={prop} />)}
+      {allProps?.map((prop) => <PropertyTile key={prop.value} data={prop} />)}
     </div>
   );
 }

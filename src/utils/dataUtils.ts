@@ -9,41 +9,36 @@ export const filterHourlyData = (
   hourlyData: HourlyData | undefined,
   givenDate: Date | undefined,
   forecastLength: number,
-): HourlyData => {
+): HourlyData | null => {
   if (!hourlyData || !givenDate) {
-    throw new Error("Ooops...");
+    return null;
   }
-  const filteredTime: Date[] = [];
-  const filteredTemperature2m = new Float32Array(forecastLength);
-  const filteredRelativeHumidity2m = new Float32Array(forecastLength);
-  const filteredVisability = new Float32Array(forecastLength);
 
   for (let i = 0; i < 24; i++) {
     const currentTime = hourlyData.time[i];
-
-    if (currentTime > givenDate && filteredTime.length < 10) {
-      filteredTime.push(currentTime);
-      filteredTemperature2m.set(
-        hourlyData.temperature2m.subarray(i, i + 1),
-        filteredTime.length - 1,
+    if (currentTime > givenDate) {
+      const filteredTime = hourlyData.time.slice(i, i + forecastLength);
+      const filteredTemperature2m = hourlyData.temperature2m.slice(
+        i,
+        i + forecastLength,
       );
-      filteredRelativeHumidity2m.set(
-        hourlyData.relativeHumidity2m.subarray(i, i + 1),
-        filteredTime.length - 1,
+      const filteredRelativeHumidity2m = hourlyData.relativeHumidity2m.slice(
+        i,
+        i + forecastLength,
       );
-      filteredVisability.set(
-        hourlyData.visibility.subarray(i, i + 1),
-        filteredTime.length - 1,
+      const filteredVisability = hourlyData.visibility.slice(
+        i,
+        i + forecastLength,
       );
+      return {
+        time: filteredTime,
+        temperature2m: filteredTemperature2m,
+        relativeHumidity2m: filteredRelativeHumidity2m,
+        visibility: filteredVisability,
+      };
     }
   }
-
-  return {
-    time: filteredTime,
-    temperature2m: filteredTemperature2m,
-    relativeHumidity2m: filteredRelativeHumidity2m,
-    visibility: filteredVisability,
-  };
+  return null;
 };
 
 export const formatTime = (date?: Date) => {

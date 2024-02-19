@@ -21,9 +21,9 @@
 }
 
 .subTemp {
+  width: 5%;
   padding-left: 5%;
   padding-right: 4%;
-  width: 5%;
   text-align: center;
   color: var(--title-color);
   font-size: 22px;

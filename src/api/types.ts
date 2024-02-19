@@ -1,4 +1,5 @@
 export type Params = {
+  name: string;
   latitude: number;
   longitude: number;
   current: string[];
@@ -43,6 +44,7 @@ export type DayData = {
 };
 
 export type WeatherData = {
+  name: string;
   current: CurrentData;
   hourly: HourlyData;
   daily: DailyData;

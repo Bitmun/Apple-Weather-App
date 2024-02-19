@@ -5,13 +5,6 @@
   align-items: flex-start;
 }
 
-.tempText {
-  color: var(--hours-font-color);
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-}
-
 .hoursWeatherCode {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,44 +13,10 @@
   border-color: var(--hours-border-bottom);
 }
 
-.timeText {
-  margin-top: 30%;
-  font-size: 17px;
-  color: var(--hours-font-color);
-  font-weight: 500;
-}
-
-.hourWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 6%;
-  text-align: center;
-}
-
-.hourWrapper:last-child {
-  padding-right: 1%;
-}
-
-.picture {
-  padding-top: 50%;
-  padding-bottom: 50%;
-}
-
 .hoursContainer {
   height: fit-content;
   padding: 2%;
   border-radius: 15px;
   background: var(--week-background);
   backdrop-filter: blur(145px);
-}
-
-
-@media (max-width: 779px) {
-  .timeText {    
-    font-size: 12px;
-  }
-  .tempText {
-    font-size: 20px;
-  }
-  
 }

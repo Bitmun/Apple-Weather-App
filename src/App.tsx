@@ -1,13 +1,14 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { Dispatch, createContext, useEffect, useState } from "react";
 import { fetchData } from "./api/utils";
-import { params } from "./api/data";
 import { WeatherData } from "./api/types";
 import { MainPart } from "./components/MainPart/MainPart";
 import { SideBar } from "./components/SideBar/SideBar";
 import styles from "./App.module.css";
+import { NYparams } from "./api/data";
 
 interface WeatherContextType {
   weatherData: WeatherData;
+  setWeatherData: Dispatch<React.SetStateAction<WeatherData | undefined>>;
 }
 
 export const WeatherDataContext = createContext<WeatherContextType | null>(
@@ -22,7 +23,7 @@ function App() {
   useEffect(() => {
     const fetchAllData = async () => {
       const URL = process.env.REACT_APP_URL as string;
-      const data = await fetchData(URL, params);
+      const data = await fetchData(URL, NYparams);
       setWeatherData(data);
       setIsLoading(false);
     };
@@ -35,10 +36,12 @@ function App() {
   }
 
   return (
-    <WeatherDataContext.Provider value={{ weatherData }}>
+    <WeatherDataContext.Provider value={{ weatherData, setWeatherData }}>
       <div className={styles.appWrapper}>
-        <MainPart />
-        <SideBar />
+        <div className={styles.appContainer}>
+          <MainPart />
+          <SideBar />
+        </div>
       </div>
     </WeatherDataContext.Provider>
   );

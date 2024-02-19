@@ -1,7 +1,7 @@
 import React from "react";
 import { getWeekDay } from "@utils/dataUtils";
 import styles from "./dailyForecastEl.module.css";
-import weatherPicture from "@assets/png/cloud.sun.fill.png";
+import weatherPicture from "@assets/png/cloudSun.png";
 import { DailyForecastElProps } from "./types";
 
 export function DailyForecastEl({ dayWeather }: DailyForecastElProps) {

@@ -1,0 +1,39 @@
+.timeText {
+  margin-top: 30%;
+  font-size: 17px;
+  color: var(--hours-font-color);
+  font-weight: 500;
+}
+
+.tempText {
+  color: var(--hours-font-color);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.hourWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 6%;
+  text-align: center;
+}
+
+.hourWrapper:last-child {
+  padding-right: 1%;
+}
+
+.picture {
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+
+@media (max-width: 779px) {
+  .timeText {    
+    font-size: 12px;
+  }
+  .tempText {
+    font-size: 20px;
+  }
+  
+}

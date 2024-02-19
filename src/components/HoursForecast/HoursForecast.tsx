@@ -1,39 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { WeatherDataContext } from "../../App";
-import { filterHourlyData, shorterTimeFormat } from "@utils/dataUtils";
+import { filterHourlyData } from "@utils/dataUtils";
 import styles from "./hoursForecast.module.css";
-import weatherPicture from "@assets/png/cloud.sun.fill.png";
+import HourEl from "../HourEl/HourEl";
+import { toast } from "react-toastify";
 
 export function HoursForecast() {
   const data = useContext(WeatherDataContext);
 
-  const hourlyData = data?.weatherData.hourly;
+  const hourlyData = useMemo(() => data?.weatherData?.hourly, [data]);
+  const currentTime = useMemo(() => data?.weatherData?.current?.time, [data]);
 
-  const currentTime = data?.weatherData?.current.time;
-
-  const filteredData = filterHourlyData(hourlyData, currentTime, 10);
+  const filteredData = useMemo(
+    () => filterHourlyData(hourlyData, currentTime, 10),
+    [data],
+  );
+  if (!filteredData) {
+    toast("no filtered data(");
+    return <p>No filtered data</p>;
+  }
   return (
     <div className={styles.hoursContainer}>
       <p className={styles.hoursWeatherCode}>
         Cloudy conditions from 1AM-9AM, with showers expected at 9AM.
       </p>
       <div className={styles.hoursWrapper}>
-        {filteredData.time.map((el, index) => {
-          const formattedTime = shorterTimeFormat(el);
-          return (
-            <div key={el.toISOString()} className={styles.hourWrapper}>
-              <p className={styles.timeText}>{formattedTime}</p>
-              <img
-                alt="HourlyWeatherPicture"
-                className={styles.picture}
-                src={weatherPicture}
-              />
-              <p className={styles.tempText}>
-                {filteredData.temperature2m[index].toFixed()}°
-              </p>
-            </div>
-          );
-        })}
+        {filteredData.time.map((el, index) => (
+          <HourEl
+            el={el}
+            temp={filteredData.temperature2m[index]}
+            key={el.toISOString()}
+          />
+        ))}
       </div>
     </div>
   );
